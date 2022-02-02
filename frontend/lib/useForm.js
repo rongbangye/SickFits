@@ -1,9 +1,21 @@
 import { number } from 'prop-types';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function useForm(initial = {}) {
   // create a state object for our inputs
   const [inputs, setInputs] = useState(initial);
+  // create intialValues for the useEffect on watch for changes
+  // if we use the intial, it will create infinite loop
+  const initialValues = Object.values(initial).join('');
+
+  // when we go to the updateProduct Page, inital data didn't show up because it is still in the loading stage
+  // when the initial data changes, like we go from loading to actually having the data
+  // then we need to update it, use useEffect
+
+  useEffect(() => {
+    // this function runs when the things we are watching change
+    setInputs(initial);
+  }, [initialValues]);
 
   // {
   //   name: 'Wes',
