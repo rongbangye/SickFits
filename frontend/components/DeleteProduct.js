@@ -15,7 +15,9 @@ function update(cache, payload) {
   // we are goin to take that payload which is the id that we get after the mutation and take that a way from the cache
   console.log(payload.data.deleteProduct);
   console.log('running the update function after delete');
-  // evict is a function from apollo that we use to update the cache after we delete a product. because when we delete a product, the react page doesn't update it yet until we refresh the page and then the product will be removed from the page - evict is the solution for this.
+
+  // Evicting Items from the Apolle Cache
+  // evict is a API from apollo that we use to update the cache after we delete a product. because when we delete a product, the react page doesn't update it yet until we refresh the page and then the product will be removed from the page - evict is the solution for this.
   cache.evict(cache.identify(payload.data.deleteProduct));
 }
 
