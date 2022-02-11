@@ -10,3 +10,12 @@ Backend:
 - Keystone.js: Framework that gives us a headless CMS which allows you to log in to your CMS. We can create all of our different data types like cart items and actual items and allows us to upload photos. It gives us a really nice interface to manage data. Keystone is going to provide us a graphQL API base on all of the crud, create, read, update, delete operations in our CMS here. And then Apollo will make the queries from to keystone and put the data into our Next.js app.
   - Node
   - MongoDB: Database (Optional, we can use PostgreSQL or Prisma as database )
+
+Home Page
+![alt text](frontend/img/HomePage.png)
+
+Home Page after sign in
+![alt text](frontend/img/Homepage_SignIn.png)
+
+Sign Up page
+![alt text](frontend/img/Login_Page.png)
